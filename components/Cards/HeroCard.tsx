@@ -11,7 +11,7 @@ type HeroCardProps = {
 
 const HeroCard = ({ title, description, index }: HeroCardProps) => {
     return (
-        <div className="rounded w-1/3 py-20 px-12 border flex flex-col items-center bg-white shadow-lg">
+        <div className="rounded w-full py-20 px-12 border flex flex-col items-center bg-white shadow-lg">
             <div className="size-32 rounded-full bg-blue-50 flex justify-center items-center">
                 {index === 0 && (
                     <IoServerOutline size={50} className="text-blue-500" />

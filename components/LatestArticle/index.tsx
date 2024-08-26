@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Section } from '../craft'
 import { Button } from '../ui/button'
-import Image from 'next/image'
-import { IoIosArrowForward } from "react-icons/io";
+
+import LatestArticleSlider from '@/molecules/LatestArticleSlider'
 
 const LatestArticle = () => {
     return (
@@ -16,64 +16,7 @@ const LatestArticle = () => {
                     </div>
                 </div>
             </Container>
-            <Container>
-                <div className="flex gap-10">
-                    <div className="bg-white w-full">
-                        <div>
-                            <Image width={400} height={400} src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2023/09/blog-1-390x290.jpg'} alt="image" className="w-full h-[17rem] md:my-0 object-cover" />
-                        </div>
-                        <div>
-                            <div className="flex">
-                                <span>Techno</span>
-                                <span>January 10, 2020</span>
-                            </div>
-                            <div>
-                                <h3>Coin strategy can help youengage Audience</h3>
-                                <p>Digital Transformation in Healthcare in 2022: Lorem ipsum dolor sit amet consectet </p>
-                                <Button variant="ghost">
-                                    Read More <IoIosArrowForward />
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-white w-full">
-                        <div>
-                            <Image width={200} height={200} src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2023/09/blog-1-390x290.jpg'} alt="image" />
-                        </div>
-                        <div>
-                            <div className="flex">
-                                <span>Techno</span>
-                                <span>January 10, 2020</span>
-                            </div>
-                            <div>
-                                <h3>Coin strategy can help youengage Audience</h3>
-                                <p>Digital Transformation in Healthcare in 2022: Lorem ipsum dolor sit amet consectet </p>
-                                <Button variant="ghost">
-                                    Read More <IoIosArrowForward />
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-white w-full">
-                        <div>
-                            <Image width={200} height={200} src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2023/09/blog-1-390x290.jpg'} alt="image" />
-                        </div>
-                        <div>
-                            <div className="flex">
-                                <span>Techno</span>
-                                <span>January 10, 2020</span>
-                            </div>
-                            <div>
-                                <h3>Coin strategy can help youengage Audience</h3>
-                                <p>Digital Transformation in Healthcare in 2022: Lorem ipsum dolor sit amet consectet </p>
-                                <Button variant="ghost">
-                                    Read More <IoIosArrowForward />
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Container>
+            <LatestArticleSlider /> 
         </Section>
     )
 }

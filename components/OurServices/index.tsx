@@ -17,7 +17,7 @@ const OurServices = ({ ourServicesBackground, ourServicesSubTitle, ourServicesTi
                     <span className="text-white text-center text-base font-medium uppercase tracking-[.30em] z-[1]">{ourServicesSubTitle}</span>
                     <h2 className="text-white text-center capitalize w-1/2 md:text-4xl md:font-bold md:my-0 z-[1]">{ourServicesTitle}</h2>
                 </div>
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                     {ourServicesServices?.map((services) => (
                         <OurServiceCard key={services?.title} {...services} />
                     ))}

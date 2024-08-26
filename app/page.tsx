@@ -20,8 +20,9 @@ import Testimonials from "@/components/Testimonials";
 import OurServices from "@/components/OurServices";
 import OurExperience from "@/components/OurExperience";
 import LatestArticle from "@/components/LatestArticle";
-
-import { cn } from "@/lib/utils";
+import Newsletter from "@/components/Newsletter";
+import CompanyInfo from "@/components/CompanyInfo";
+import Contact from "@/components/Contact";
 
 // Icons
 import { File, Pen, Tag, Boxes, User, Folder, ArrowRight } from "lucide-react";
@@ -60,15 +61,15 @@ export default async function Home() {
       </Section>
       <Section className="bg-gray-100">
         <Container className="md:-mt-40">
-          <div className="flex gap-5">
+          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {heroSection && heroSection!.heroSection!.heroCard!.map((item: any, index: number) => (
               <HeroCard key={title} title={item.title} description={item.description} index={index} />
             ))}
           </div>
         </Container>
         <Container>
-          <div className="flex">
-            <div className="w-1/2">
+          <div className="flex flex-col md:flex-row">
+            <div className="w-full md:w-1/2">
               <div className="w-full h-full relative">
                 <Image
                   src={`${aboutSection?.aboutSection?.aboutImage?.node?.sourceUrl!}`}
@@ -80,7 +81,7 @@ export default async function Home() {
                 ></Image>
               </div>
             </div>
-            <div className="w-1/2 space-y-6">
+            <div className="w-full md:w-1/2 space-y-6">
               <div className="flex items-center justify-center gap-7">
                 <span className="text-9xl text-primaryBlue font-bold">{aboutSection?.aboutSection?.aboutBigHeading}</span>
                 <h2 className="md:text-4xl md:font-bold md:my-0">{aboutSection?.aboutSection?.aboutTitle}</h2>
@@ -97,6 +98,9 @@ export default async function Home() {
       <Testimonials {...testimonialSection as TestimonialSection} />
       <OurExperience />
       <LatestArticle />
+      <Newsletter />
+      <CompanyInfo />
+      <Contact />
     </>
   );
 }

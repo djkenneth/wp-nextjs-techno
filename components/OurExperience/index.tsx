@@ -10,7 +10,7 @@ import { Container, Section } from '../craft'
 import Progress from '@/molecules/Progress'
 
 const OurExperience = () => {
-    const [ref, inView, entry ] = useInView();
+    const [ref, inView, entry] = useInView();
     const [progress, setProgress] = useState(0);
 
     // useEffect(() => {
@@ -35,8 +35,8 @@ const OurExperience = () => {
     return (
         <Section>
             <Container>
-                <div className={cn('flex gap-10')}>
-                    <div className="w-1/2">
+                <div className={cn('flex gap-10 flex-col md:flex-row')}>
+                    <div className="w-full md:w-1/2">
                         <Image
                             src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2020/12/video-img3.png'}
                             alt={'image'}
@@ -45,7 +45,7 @@ const OurExperience = () => {
                             className="w-full md:my-0"
                         />
                     </div>
-                    <div className="w-1/2 space-y-5 flex flex-col justify-center">
+                    <div className="w-full md:w-1/2 space-y-5 flex flex-col justify-center">
                         <div className="flex flex-col items-start gap-5">
                             <span className="text-left text-primaryBlue text-base font-medium uppercase tracking-[.30em]">Our Experience</span>
                             <h2 className="capitalize md:text-4xl md:font-bold md:my-0">Stay Up, Stay Running & Protected</h2>

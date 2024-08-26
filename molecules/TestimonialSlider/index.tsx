@@ -20,7 +20,30 @@ const TestimonialSlider = ({ testimonials }: TemplateTestimonialsPostQuery) => {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     return (
@@ -44,7 +67,7 @@ const TestimonialSlider = ({ testimonials }: TemplateTestimonialsPostQuery) => {
                                     <div className={cn("flex items-center gap-1")}>
                                         {[...Array(5)].map((_, index) => (
                                             <FaStar key={index.toString()} className={cn("text-blue-600 size-6")} />
-                                        ))} 
+                                        ))}
                                     </div>
                                     <div>
                                         <p className={cn("text-white font-semibold")}>{testimonial.title}</p>

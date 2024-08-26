@@ -118,6 +118,14 @@
   left: -20rem;
 }
 
+.custom-pagination-slider {
+  @apply !flex justify-center p-0 [&>li]:list-none [&>li]:cursor-pointer [&>li]:inline-block [&>li]:mx-2 [&>li]:p-0 [&>li>button]:border-0 [&>li>button]:bg-gray-300 [&>li>button]:text-transparent [&>li>button]:cursor-pointer [&>li>button]:block [&>li>button]:h-1 [&>li>button]:w-10 [&>li>button]:rounded [&>li.slick-active>button]:bg-primaryBlue
+}
+
+.slick-next, .slick-prev {
+  font-size: 20px;
+}
+
 @-webkit-keyframes fade-in {
   0% {
     -webkit-filter: blur(12px);

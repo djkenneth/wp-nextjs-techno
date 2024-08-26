@@ -19,19 +19,42 @@ const CaseStudySlider = ({ caseStudies }: TemplateCaseStudiesPostQuery) => {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     return (
         <div>
             <Slider {...settings}>
                 {caseStudies?.nodes.map((data: any) => {
-                    
+
                     const title = get(data, 'title')
                     const sourceUrl = get(data, 'caseStudies.thumbnail.node.sourceUrl');
                     const categoryName = get(data, 'caseStudyCategories.nodes[0].name');
                     const categorySlug = get(data, 'caseStudyCategories.nodes[0].slug');
-                    
+
                     return (
                         <div key={data.title} className='group'>
                             <div className="relative overflow-hidden w-full before:content-[''] before:absolute before:h-full before:w-full before:bg-primaryBlue/50 before:left-0 before:top-0 before:opacity-0 before:invisible before:transform before:duration-100 hover:before:opacity-100 hover:before:visible">
