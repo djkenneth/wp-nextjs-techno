@@ -1,0 +1,19 @@
+query TemplateTestimonialByPost($slug: String!) {
+  testimonialBy(slug: $slug) {
+    title
+    content
+    uri
+    slug
+    testimonialPost {
+      testimonialThumbnail {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+      testimonialPosition
+    }
+  }
+}

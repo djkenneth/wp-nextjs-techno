@@ -1,0 +1,91 @@
+
+query TemplateHome($uri: String! = "home") {
+  pageBy(uri: $uri) {
+    title
+    content
+    heroSection {
+      heroSection {
+        heroTitle
+        heroDescription
+        heroCard {
+          title
+          description
+        }
+        heroSubTitle
+        heroBackground {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        buttons {
+          title
+          link
+          backgroundColor
+        }
+      }
+    }
+    aboutSection {
+      aboutSection {
+        aboutImage {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        aboutTitle
+        aboutDescription
+        aboutBigHeading
+      }
+    }
+    ourServicesSection {
+      ourServicesBackground {
+        image {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        color
+      }
+      ourServicesSubTitle
+      ourServicesTitle
+      ourServicesServices {
+        icon
+        title
+        description
+        url
+      }
+    }
+    caseStudiesSection {
+      caseStudiesSubTitle
+      caseStudiesTitle
+    }
+    processSection {
+      processSubTitle
+      processTitle
+      stepProgressInfo {
+        title
+        description
+      }
+    }
+    testimonialSection {
+      testimonialSubTitle
+      testimonialTitle
+      testimonialBackgroundImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+    }
+  }
+}

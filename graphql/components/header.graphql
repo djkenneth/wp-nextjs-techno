@@ -1,0 +1,22 @@
+query getHeaderPage {
+  customHeader {
+    header {
+      headerBackgroundColor
+      logo {
+        node {
+          link
+          title
+          uri
+        }
+      }
+      menus {
+        title
+        url
+      }
+      cart {
+        title
+        url
+      }
+    }
+  }
+}

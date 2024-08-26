@@ -1,0 +1,43 @@
+query getFooterPage {
+  customFooter {
+    footer {
+      footerBackground {
+        node {
+          link
+          title
+          uri
+        }
+      }
+      footerLogo {
+        node {
+          link
+          title
+          uri
+        }
+      }
+      description
+      followUsSection {
+        title
+        socialMedia {
+          iconTitle
+          show
+        }
+      }
+      quickLinksSection {
+        title
+        menus {
+          title
+          url
+        }
+      }
+      contactInfoSection {
+        title
+        contactInfo {
+          icon
+          title
+          description
+        }
+      }
+    }
+  }
+}

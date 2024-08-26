@@ -1,0 +1,33 @@
+query TemplateCaseStudiesPost {
+  caseStudies {
+    nodes {
+      title
+      content
+      uri
+      slug
+      caseStudies {
+        thumbnail {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        category
+        projectName
+        skills
+        completeDate
+        client
+      }
+      caseStudyCategories {
+        nodes {
+          id
+          name
+          slug
+          uri
+        }
+      }
+    }
+  }
+}

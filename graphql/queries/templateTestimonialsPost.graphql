@@ -1,0 +1,21 @@
+query TemplateTestimonialsPost {
+  testimonials {
+    nodes {
+      title
+      content
+      uri
+      slug
+      testimonialPost {
+        testimonialThumbnail {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        testimonialPosition
+      }
+    }
+  }
+}
