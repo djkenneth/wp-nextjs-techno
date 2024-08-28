@@ -1,5 +1,5 @@
 
-query TemplateHome($uri: String! = "home") {
+query TemplateHome($uri: String!) {
   pageBy(uri: $uri) {
     title
     content
@@ -79,6 +79,41 @@ query TemplateHome($uri: String! = "home") {
       testimonialSubTitle
       testimonialTitle
       testimonialBackgroundImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+    }
+    ourExperienceSection {
+      ourExperienceImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+      ourExperienceSubTitle
+      ourExperienceTitle
+      ourExperienceDescription
+      ourExperienceProgress {
+        title
+        percent
+      }
+    }
+    company {
+      companyInfo {
+        icon
+        title
+        description
+      }
+    }
+    contactSection {
+      contactTitle
+      contactImage {
         node {
           id
           title

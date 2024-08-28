@@ -72,6 +72,49 @@ export const GetHeaderPageDocument = gql`
 }
     `;
 export type GetHeaderPageQueryResult = Apollo.QueryResult<GetHeaderPageQuery, GetHeaderPageQueryVariables>;
+export const TemplateArticlesPostDocument = gql`
+    query TemplateArticlesPost($first: Int!, $after: String) {
+  articles(first: $first, after: $after) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      title
+      content
+      customArticle {
+        thumbnail {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+      }
+      articleCategories {
+        nodes {
+          id
+          name
+          slug
+          uri
+        }
+      }
+      articleTags {
+        nodes {
+          id
+          name
+          slug
+          uri
+        }
+      }
+    }
+  }
+}
+    `;
+export type TemplateArticlesPostQueryResult = Apollo.QueryResult<TemplateArticlesPostQuery, TemplateArticlesPostQueryVariables>;
 export const TemplateCaseStudiesPostDocument = gql`
     query TemplateCaseStudiesPost {
   caseStudies {
@@ -143,7 +186,7 @@ export const TemplateCaseStudyByPostDocument = gql`
     `;
 export type TemplateCaseStudyByPostQueryResult = Apollo.QueryResult<TemplateCaseStudyByPostQuery, TemplateCaseStudyByPostQueryVariables>;
 export const TemplateHomeDocument = gql`
-    query TemplateHome($uri: String! = "home") {
+    query TemplateHome($uri: String!) {
   pageBy(uri: $uri) {
     title
     content
@@ -223,6 +266,41 @@ export const TemplateHomeDocument = gql`
       testimonialSubTitle
       testimonialTitle
       testimonialBackgroundImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+    }
+    ourExperienceSection {
+      ourExperienceImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+      ourExperienceSubTitle
+      ourExperienceTitle
+      ourExperienceDescription
+      ourExperienceProgress {
+        title
+        percent
+      }
+    }
+    company {
+      companyInfo {
+        icon
+        title
+        description
+      }
+    }
+    contactSection {
+      contactTitle
+      contactImage {
         node {
           id
           title

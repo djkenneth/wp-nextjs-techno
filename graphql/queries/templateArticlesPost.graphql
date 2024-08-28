@@ -1,0 +1,40 @@
+query TemplateArticlesPost($first: Int!, $after: String) {
+  articles(first: $first, after: $after) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    nodes {
+      title
+      content
+      customArticle {
+        thumbnail {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+      }
+      articleCategories {
+        nodes {
+          id
+          name
+          slug
+          uri
+        }
+      }
+      articleTags {
+        nodes {
+          id
+          name
+          slug
+          uri
+        }
+      }
+    }
+  }
+}
