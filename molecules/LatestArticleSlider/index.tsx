@@ -13,8 +13,9 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { get } from 'lodash';
 
-const LatestArticleSlider = () => {
+const LatestArticleSlider = ({ articles }: any) => {
 
     function SampleNextArrow(props: any) {
         const { className, style, onClick } = props;
@@ -76,14 +77,43 @@ const LatestArticleSlider = () => {
             }
         ]
     };
+
     return (
         <Container>
             <Slider {...settings}>
-                <div className="p-3">
+                {articles && articles.map((article: any) => (
+                    <div key={article.title} className="p-3">
+                        <div className="bg-white w-full">
+                            <div className="relative">
+                                <Image width={400} height={400} src={get(article, 'customArticle.thumbnail.node.sourceUrl')} alt={get(article, 'customArticle.thumbnail.node.title')} className="w-full h-[17rem] md:my-0 object-cover" />
+                                {article && article.articleCategories.nodes.map((badge: any, index: number) => (
+                                    <Badge key={badge.id} className={cn("absolute top-5 z-10 uppercase bg-primaryBlue py-2 px-4 rounded", {
+                                        "left-5": index === 0,
+                                        "left-28": index === 1
+                                    })}>{badge.name}</Badge>
+                                ))}
+                            </div>
+                            <div className="p-5 pl-8 space-y-4">
+                                <div className="flex">
+                                    <span className="text-sm text-gray-500 pr-4">Techno</span>
+                                    <span className="text-sm text-gray-500 pl-4">January 10, 2020</span>
+                                </div>
+                                <div className="space-y-5">
+                                    <h3 className="md:text-xl md:font-semibold md:my-0 cursor-pointer transition-colors hover:text-primaryBlue">{article.title}</h3>
+                                    <p className="text-gray-600 md:text-base">Digital Transformation in Healthcare in 2022: Lorem ipsum dolor sit amet consectet </p>
+                                    <Button variant="link" className="px-0 font-bold hover:no-underline hover:text-primaryBlue">
+                                        Read More <IoIosArrowForward className="ml-2" />
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
+                {/* <div className="p-3">
                     <div className="bg-white w-full">
-                        <div className="relative">
+                        <div>
                             <Image width={400} height={400} src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2023/09/blog-1-390x290.jpg'} alt="image" className="w-full h-[17rem] md:my-0 object-cover" />
-                            <Badge className="absolute top-5 left-5 z-10 uppercase bg-primaryBlue py-2 px-4 rounded">Crypto</Badge>
                         </div>
                         <div className="p-5 pl-8 space-y-4">
                             <div className="flex">
@@ -119,27 +149,7 @@ const LatestArticleSlider = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="p-3">
-                    <div className="bg-white w-full">
-                        <div>
-                            <Image width={400} height={400} src={'https://wp.ditsolution.net/techno-new/wp-content/uploads/2023/09/blog-1-390x290.jpg'} alt="image" className="w-full h-[17rem] md:my-0 object-cover" />
-                        </div>
-                        <div className="p-5 pl-8 space-y-4">
-                            <div className="flex">
-                                <span className="text-sm text-gray-500 pr-4">Techno</span>
-                                <span className="text-sm text-gray-500 pl-4">January 10, 2020</span>
-                            </div>
-                            <div className="space-y-5">
-                                <h3 className="md:text-xl md:font-semibold md:my-0 cursor-pointer transition-colors hover:text-primaryBlue">Coin strategy can help youengage Audience</h3>
-                                <p className="text-gray-600 md:text-base">Digital Transformation in Healthcare in 2022: Lorem ipsum dolor sit amet consectet </p>
-                                <Button variant="link" className="px-0 font-bold hover:no-underline hover:text-primaryBlue">
-                                    Read More <IoIosArrowForward className="ml-2" />
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> */}
             </Slider>
         </Container>
     )

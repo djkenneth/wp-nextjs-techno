@@ -3,7 +3,7 @@ import Link from "next/link";
 // import { getFeaturedMediaById, getPageBySlug } from "@/lib/wordpress";
 
 import graphqlQuery from '@/lib/client'
-import type { TemplateHomeQuery, OurServicesSection, CaseStudiesSection, ProcessSection, TestimonialSection } from '@/types/graphql'
+import type { TemplateHomeQuery, OurServicesSection, CaseStudiesSection, ProcessSection, TestimonialSection, OurExperienceSection, Company, ContactSection } from '@/types/graphql'
 import { TemplateHomeDocument } from "@/graphql/sdk";
 
 // Craft Imports
@@ -40,7 +40,18 @@ export default async function Home() {
     notFound();
   }
 
-  const { title, content, heroSection, aboutSection, ourServicesSection, caseStudiesSection, processSection, testimonialSection } = pageData;
+  const {
+    title,
+    content,
+    heroSection,
+    aboutSection,
+    ourServicesSection,
+    caseStudiesSection,
+    processSection,
+    testimonialSection,
+    ourExperienceSection,
+    company,
+    contactSection } = pageData;
 
   return (
     <>
@@ -96,11 +107,11 @@ export default async function Home() {
       <CaseStudies {...caseStudiesSection as CaseStudiesSection} />
       <Process {...processSection as ProcessSection} />
       <Testimonials {...testimonialSection as TestimonialSection} />
-      <OurExperience />
+      <OurExperience {...ourExperienceSection as OurExperienceSection} />
       <LatestArticle />
       <Newsletter />
-      <CompanyInfo />
-      <Contact />
+      <CompanyInfo {...company as Company} />
+      <Contact {...contactSection as ContactSection} />
     </>
   );
 }

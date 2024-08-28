@@ -1,10 +1,20 @@
 import React from 'react'
+import graphqlQuery from '@/lib/client'
+import { TemplateArticlesPostDocument } from '@/graphql/sdk'
+import type { TemplateArticlesPostQuery } from '@/types/graphql'
+
 import { Container, Section } from '../craft'
 import { Button } from '../ui/button'
 
 import LatestArticleSlider from '@/molecules/LatestArticleSlider'
 
-const LatestArticle = () => {
+const LatestArticle = async () => {
+
+    const { articles } = await graphqlQuery<TemplateArticlesPostQuery>(
+        TemplateArticlesPostDocument,
+        { first: 6, after: "null" },
+    )
+
     return (
         <Section className="bg-[#edf4fc]">
             <Container>
@@ -16,7 +26,7 @@ const LatestArticle = () => {
                     </div>
                 </div>
             </Container>
-            <LatestArticleSlider /> 
+            <LatestArticleSlider articles={articles?.nodes} />
         </Section>
     )
 }
