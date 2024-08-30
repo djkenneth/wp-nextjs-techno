@@ -42,9 +42,9 @@ const Main = ({ children, className, id }: MainProps) => {
         // General Prose
         "prose prose-neutral prose:font-sans dark:prose-invert xl:prose-lg",
         // Prose Headings
-        "prose-headings:font-normal",
+        // "prose-headings:font-normal",
         // Prose Strong
-        "prose-strong:font-semibold",
+        // "prose-strong:font-semibold",
         // Inline Links
         "prose-a:underline prose-a:decoration-primary/50 prose-a:underline-offset-2 prose-a:text-foreground/75 prose-a:transition-all",
         // Inline Link Hover
@@ -65,7 +65,7 @@ const Main = ({ children, className, id }: MainProps) => {
 // Section Component
 type SectionProps = {
   children: React.ReactNode;
-  style?: React.CSSProperties; 
+  style?: React.CSSProperties;
   className?: string;
   id?: string;
 };

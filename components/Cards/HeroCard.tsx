@@ -2,6 +2,8 @@ import React from 'react'
 import { IoServerOutline } from "react-icons/io5";
 import { AiOutlineFacebook } from "react-icons/ai";
 import { FaNetworkWired } from "react-icons/fa";
+import { Button } from '../ui/button';
+import { IoIosArrowForward } from 'react-icons/io';
 
 type HeroCardProps = {
     title: string;
@@ -27,6 +29,9 @@ const HeroCard = ({ title, description, index }: HeroCardProps) => {
             </div>
             <h2 className="text-center md:text-xl md:font-bold">{title}</h2>
             <p className="text-center md:text-base text-black font-light">{description}</p>
+            <Button variant="link" className="px-0 font-bold hover:no-underline hover:text-primaryBlue">
+                Read More <IoIosArrowForward className="ml-2" />
+            </Button>
         </div>
     )
 }

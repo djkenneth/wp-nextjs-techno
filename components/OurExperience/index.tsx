@@ -32,7 +32,7 @@ const OurExperience = ({ ourExperienceImage, ourExperienceSubTitle, ourExperienc
                     <div className="w-full md:w-1/2 space-y-5 flex flex-col justify-center">
                         <div className="flex flex-col items-start gap-5">
                             <span className="text-left text-primaryBlue text-base font-medium uppercase tracking-[.30em]">{ourExperienceSubTitle}</span>
-                            <h2 className="capitalize md:text-4xl md:font-bold md:my-0">{ourExperienceTitle}</h2>
+                            <h2 className="capitalize my-0 md:text-4xl md:font-bold">{ourExperienceTitle}</h2>
                             <p className="text-lg font-light">{ourExperienceDescription}</p>
                         </div>
 

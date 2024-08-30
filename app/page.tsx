@@ -3,7 +3,7 @@ import Link from "next/link";
 // import { getFeaturedMediaById, getPageBySlug } from "@/lib/wordpress";
 
 import graphqlQuery from '@/lib/client'
-import type { TemplateHomeQuery, OurServicesSection, CaseStudiesSection, ProcessSection, TestimonialSection, OurExperienceSection, Company, ContactSection } from '@/types/graphql'
+import type { TemplateHomeQuery, OurServicesSection, CaseStudiesSection, ProcessSection, TestimonialSection, OurExperienceSection, Company, ContactSection, HeroSection, AboutSection } from '@/types/graphql'
 import { TemplateHomeDocument } from "@/graphql/sdk";
 
 // Craft Imports
@@ -14,6 +14,7 @@ import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import HeroCard from "@/components/Cards/HeroCard";
 
+import Hero from "@/components/Hero";
 import CaseStudies from "@/components/CaseStudies";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
@@ -28,6 +29,8 @@ import Contact from "@/components/Contact";
 import { File, Pen, Tag, Boxes, User, Folder, ArrowRight } from "lucide-react";
 
 import { notFound } from "next/navigation";
+import { cn } from "@/lib/utils";
+import About from "@/components/About";
 
 // This page is using the craft.tsx component and design system
 export default async function Home() {
@@ -56,53 +59,8 @@ export default async function Home() {
   return (
     <>
       {/*  */}
-      <Section className="bg-center bg-no-repeat bg-cover md:py-52" style={{ backgroundImage: `url(${heroSection?.heroSection?.heroBackground?.node?.sourceUrl!})` }}>
-        <Container>
-          <div className="space-y-6">
-            <h3 className="text-white text-3xl text-center font-bold uppercase">{heroSection?.heroSection?.heroSubTitle}</h3>
-            <h1 className="text-white md:text-6xl text-center md:font-extrabold">{heroSection?.heroSection?.heroTitle}</h1>
-            <p className="text-white text-lg text-center font-base">{heroSection?.heroSection?.heroDescription}</p>
-            <div className="flex justify-center gap-5">
-              {heroSection && heroSection.heroSection?.buttons?.map((button) => (
-                <Button key={button?.title} className="uppercase bg-primaryBlue px-14 py-6 hover:bg-white hover:text-primaryBlue duration-500">{button?.title}</Button>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
-      <Section className="bg-gray-100">
-        <Container className="md:-mt-40">
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {heroSection && heroSection!.heroSection!.heroCard!.map((item: any, index: number) => (
-              <HeroCard key={title} title={item.title} description={item.description} index={index} />
-            ))}
-          </div>
-        </Container>
-        <Container>
-          <div className="flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2">
-              <div className="w-full h-full relative">
-                <Image
-                  src={`${aboutSection?.aboutSection?.aboutImage?.node?.sourceUrl!}`}
-                  alt={aboutSection?.aboutSection?.aboutImage?.node?.title!}
-                  className="dark:invert"
-                  fill
-                  sizes='100vw'
-                  style={{ objectFit: 'contain' }}
-                ></Image>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 space-y-6">
-              <div className="flex items-center justify-center gap-7">
-                <span className="text-9xl text-primaryBlue font-bold">{aboutSection?.aboutSection?.aboutBigHeading}</span>
-                <h2 className="md:text-4xl md:font-bold md:my-0">{aboutSection?.aboutSection?.aboutTitle}</h2>
-              </div>
-              <div className="text-lg font-light" dangerouslySetInnerHTML={{ __html: aboutSection?.aboutSection?.aboutDescription! }}></div>
-              <Button className="uppercase bg-primaryBlue px-14 py-6 hover:bg-white hover:text-primaryBlue duration-500">More Details</Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <Hero {...heroSection as HeroSection} />
+      <About heroSection={heroSection as HeroSection} aboutSection={aboutSection as AboutSection} />
       <OurServices {...ourServicesSection as OurServicesSection} />
       <CaseStudies {...caseStudiesSection as CaseStudiesSection} />
       <Process {...processSection as ProcessSection} />
