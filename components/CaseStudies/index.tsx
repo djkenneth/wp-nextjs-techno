@@ -22,7 +22,7 @@ const CaseStudies = async ({ caseStudiesSubTitle, caseStudiesTitle }: CaseStudie
                 <div>
                     <span className="text-base text-primaryBlue uppercase tracking-[.45em]">{caseStudiesSubTitle}</span>
                     <div className="flex justify-between items-center flex-col md:flex-row">
-                        <h2 className="text-black md:text-4xl md:font-bold md:my-0">{caseStudiesTitle}</h2>
+                        <h2 className="text-black mt-2 md:text-4xl md:font-bold md:my-0">{caseStudiesTitle}</h2>
                         <Button className="uppercase bg-primaryBlue px-14 py-6 hover:bg-[#0c2bdb] duration-500">See All Cases</Button>
                     </div>
                 </div>

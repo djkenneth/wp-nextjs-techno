@@ -14,7 +14,7 @@ const Process = ({ processSubTitle, processTitle, stepProgressInfo }: ProcessSec
                     <span className="text-center text-primaryBlue text-base font-medium uppercase tracking-[.30em]">{processSubTitle}</span>
                     <h2 className="text-center capitalize my-0 md:w-1/2 md:text-4xl md:font-bold">{processTitle}</h2>
                 </div>
-                <div className={cn("grid grid-cols-1 md:grid-cols-3")}>
+                <div className={cn("grid grid-cols-1 gap-y-7 md:grid-cols-3 md:gap-y-0")}>
                     {stepProgressInfo && stepProgressInfo.map((data, index) => {
                         const isProgressLine = index > 0 ? true : false;
                         return (

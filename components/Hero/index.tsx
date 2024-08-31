@@ -12,14 +12,14 @@ const Hero = ({ heroSection }: HeroSection) => {
         <Section className="h-dvh bg-center bg-no-repeat bg-cover md:h-auto md:py-52" style={{ backgroundImage: `url(${heroSection?.heroBackground?.node?.sourceUrl!})` }}>
             <Container>
                 <div className="space-y-6">
-                    <h3 className="text-white text-3xl text-center uppercase md:font-bold">{heroSection?.heroSubTitle}</h3>
+                    <h3 className="text-white text-2xl text-center uppercase md:text-3xl md:font-bold">{heroSection?.heroSubTitle}</h3>
                     {/* <h1 className="text-white md:text-6xl text-center font-bold">{heroSection?.heroTitle}</h1> */}
                     <div className="w-full flex justify-center">
                         <ReactTyped strings={[
                             "Provide All IT Services",
                             "Hosting Services",
                             "Digital Marketing Service",
-                        ]} typeSpeed={30} backSpeed={30} loop className="text-white md:text-6xl text-center font-bold" />
+                        ]} typeSpeed={30} backSpeed={30} loop className="text-white text-5xl text-center font-bold md:text-6xl" />
                     </div>
                     <p className="text-white text-lg text-center font-base">{heroSection?.heroDescription}</p>
                     <div className="flex flex-col justify-center gap-5 md:flex-row">
