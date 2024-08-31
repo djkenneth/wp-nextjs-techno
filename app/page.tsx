@@ -1,36 +1,29 @@
-import Image from "next/image";
 import Link from "next/link";
-// import { getFeaturedMediaById, getPageBySlug } from "@/lib/wordpress";
 
 import graphqlQuery from '@/lib/client'
 import type { TemplateHomeQuery, OurServicesSection, CaseStudiesSection, ProcessSection, TestimonialSection, OurExperienceSection, Company, ContactSection, HeroSection, AboutSection } from '@/types/graphql'
 import { TemplateHomeDocument } from "@/graphql/sdk";
 
 // Craft Imports
-import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
 
 // Components
-import { Button } from "@/components/ui/button";
-import HeroCard from "@/components/Cards/HeroCard";
-
-import Hero from "@/components/Hero";
-import CaseStudies from "@/components/CaseStudies";
-import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
-import OurServices from "@/components/OurServices";
-import OurExperience from "@/components/OurExperience";
-import LatestArticle from "@/components/LatestArticle";
-import Newsletter from "@/components/Newsletter";
-import CompanyInfo from "@/components/CompanyInfo";
-import Contact from "@/components/Contact";
+import Hero from "@/components/Sections/Hero";
+import About from "@/components/Sections/About";
+import CaseStudies from "@/components/Sections/CaseStudies";
+import Process from "@/components/Sections/Process";
+import Testimonials from "@/components/Sections/Testimonials";
+import OurServices from "@/components/Sections/OurServices";
+import OurExperience from "@/components/Sections/OurExperience";
+import LatestArticle from "@/components/Sections/LatestArticle";
+import Newsletter from "@/components/Sections/Newsletter";
+import CompanyInfo from "@/components/Sections/CompanyInfo";
+import Contact from "@/components/Sections/Contact";
 
 // Icons
 import { File, Pen, Tag, Boxes, User, Folder, ArrowRight } from "lucide-react";
 
 import { notFound } from "next/navigation";
-import { cn } from "@/lib/utils";
-import About from "@/components/About";
 
 // This page is using the craft.tsx component and design system
 export default async function Home() {

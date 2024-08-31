@@ -2,11 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import { ContactSection } from '@/types/graphql'
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import { cn } from '@/lib/utils'
-import { Input } from '../ui/input'
-import { Textarea } from '../ui/textarea'
-import { Button } from '../ui/button'
+import { Input } from '../../ui/input'
+import { Textarea } from '../../ui/textarea'
+import { Button } from '../../ui/button'
 import { get } from 'lodash'
 
 const Contact = ({ contactImage, contactTitle }: ContactSection) => {

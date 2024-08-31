@@ -3,9 +3,9 @@
 import React from 'react'
 import { ReactTyped } from "react-typed";
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import { HeroSection } from '@/types/graphql'
-import { Button } from '../ui/button'
+import { Button } from '../../ui/button'
 
 const Hero = ({ heroSection }: HeroSection) => {
     return (

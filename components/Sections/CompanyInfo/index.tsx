@@ -2,7 +2,7 @@ import React from 'react'
 import { Company } from '@/types/graphql'
 import { Clock3, MapPin, PhoneCall } from 'lucide-react'
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import { cn } from '@/lib/utils'
 
 const CompanyInfo = ({ companyInfo }: Company) => {

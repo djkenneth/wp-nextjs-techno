@@ -2,7 +2,7 @@ import React from 'react'
 
 import type { ProcessSection } from '@/types/graphql';
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import ProgressStepCard from '@/molecules/ProgressStep/Card'
 import { cn } from '@/lib/utils'
 

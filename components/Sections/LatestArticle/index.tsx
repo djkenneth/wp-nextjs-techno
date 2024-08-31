@@ -3,8 +3,8 @@ import graphqlQuery from '@/lib/client'
 import { TemplateArticlesPostDocument } from '@/graphql/sdk'
 import type { TemplateArticlesPostQuery } from '@/types/graphql'
 
-import { Container, Section } from '../craft'
-import { Button } from '../ui/button'
+import { Container, Section } from '../../craft'
+import { Button } from '../../ui/button'
 
 import LatestArticleSlider from '@/molecules/LatestArticleSlider'
 

@@ -2,10 +2,10 @@ import React from 'react'
 
 import type { OurServicesSection } from '@/types/graphql'
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 
 import { cn } from '@/lib/utils'
-import OurServiceCard from '../Cards/OurServiceCard'
+import OurServiceCard from '../../Cards/OurServiceCard'
 
 const OurServices = ({ ourServicesBackground, ourServicesSubTitle, ourServicesTitle, ourServicesServices }: OurServicesSection) => {
 

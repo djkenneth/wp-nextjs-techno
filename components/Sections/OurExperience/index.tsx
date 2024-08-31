@@ -9,7 +9,7 @@ import { OurExperienceSection } from '@/types/graphql';
 
 import { cn } from '@/lib/utils'
 
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import Progress from '@/molecules/Progress'
 
 const OurExperience = ({ ourExperienceImage, ourExperienceSubTitle, ourExperienceTitle, ourExperienceDescription, ourExperienceProgress }: OurExperienceSection) => {

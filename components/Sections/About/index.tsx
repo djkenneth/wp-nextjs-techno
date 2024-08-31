@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container, Section } from '../craft'
-import HeroCard from '../Cards/HeroCard'
+import { Container, Section } from '../../craft'
+import HeroCard from '../../Cards/HeroCard'
 import Image from 'next/image'
-import { Button } from '../ui/button'
+import { Button } from '../../ui/button'
 import { AboutSection, HeroSection } from '@/types/graphql'
 import { cn } from '@/lib/utils'
 

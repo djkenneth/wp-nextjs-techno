@@ -8,7 +8,7 @@ import graphqlQuery from '@/lib/client';
 
 // Craft Imports
 import { Section, Container } from "@/components/craft";
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 
 import CaseStudySlider from '@/molecules/CaseStudySlider';
 

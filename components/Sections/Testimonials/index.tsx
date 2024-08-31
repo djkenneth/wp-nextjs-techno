@@ -7,7 +7,7 @@ import { get } from 'lodash';
 import graphqlQuery from '@/lib/client';
 
 // Craft Imports
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import { cn } from '@/lib/utils'
 
 import TestimonialSlider from '@/molecules/TestimonialSlider';

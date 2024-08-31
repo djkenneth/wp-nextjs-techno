@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container, Section } from '../craft'
+import { Container, Section } from '../../craft'
 import { cn } from '@/lib/utils'
-import { Input } from '../ui/input'
-import { Button } from '../ui/button'
+import { Input } from '../../ui/input'
+import { Button } from '../../ui/button'
 
 const Newsletter = () => {
     return (
