@@ -9,7 +9,7 @@ import Balancer from "react-wrap-balancer";
 
 // Components
 import Hero from "@/components/Sections/Hero";
-import About from "@/components/Sections/About";
+import AboutMainSection from "@/components/Sections/AboutMainSection";
 import CaseStudies from "@/components/Sections/CaseStudies";
 import Process from "@/components/Sections/Process";
 import Testimonials from "@/components/Sections/Testimonials";
@@ -53,7 +53,7 @@ export default async function Home() {
     <>
       {/*  */}
       <Hero {...heroSection as HeroSection} />
-      <About heroSection={heroSection as HeroSection} aboutSection={aboutSection as AboutSection} />
+      <AboutMainSection heroSection={heroSection as HeroSection} aboutSection={aboutSection as AboutSection} />
       <OurServices {...ourServicesSection as OurServicesSection} />
       <CaseStudies {...caseStudiesSection as CaseStudiesSection} />
       <Process {...processSection as ProcessSection} />
