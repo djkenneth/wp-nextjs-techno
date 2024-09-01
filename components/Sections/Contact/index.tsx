@@ -15,7 +15,7 @@ const Contact = ({ contactImage, contactTitle }: ContactSection) => {
       <Container>
         <div className="flex flex-col-reverse w-full shadow-2xl md:flex-row">
           <div className="w-full md:w-1/2 p-8">
-            <h1 className="md:text-4xl md:font-semibold md:mt-0">{contactTitle}</h1>
+            <h1 className="mb-3 md:text-4xl md:font-semibold md:mt-0">{contactTitle}</h1>
             <div className="grid grid-cols-2 gap-4 mb-4">
               <Input type="text" placeholder="Name" className="h-14 focus-visible:ring-blue-300 focus-visible:ring-4 duration-300" />
               <Input type="email" placeholder="Emai" className="h-14 focus-visible:ring-blue-300 focus-visible:ring-4 duration-300" />

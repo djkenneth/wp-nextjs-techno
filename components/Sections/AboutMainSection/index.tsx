@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import Balancer from 'react-wrap-balancer'
 import colorizeText from '@/utils/colorizeText'
 import ServiceCard from '@/components/Cards/ServiceCard'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 type AboutProps = {
     heroSection?: HeroSection
@@ -72,16 +73,25 @@ const AboutReverseWithIcon = () => {
     return (
         <Section className="bg-white-egg">
             <Container>
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col gap-y-7 md:flex-row md:gap-y-0">
                     <div className="w-full md:w-[40%] space-y-6">
                         {/* <div className="flex flex-col justify-center gap-7 md:flex-row md:items-center"> */}
                         <span className={cn("font-bold text-base uppercase text-primaryBlue tracking-[0.5em]")}>About Techno</span>
-                        <h2 className={cn("my-0 text-2xl font-bold md:my-0")}>{colorText}</h2>
+                        <h2 className={cn("my-0 text-3xl font-bold md:my-0 md:text-4xl")}>{colorText}</h2>
                         {/* </div> */}
                         <Balancer className="text-lg font-light">
                             Pellentesque at posuere tellus. Ut sed dui justo. Phasellus is scelerisque turpis arcu, ut pulvinar lectus tristique non. Nam laoreet, risus vel laoreet laoreet, mauris risus porta velit, id imperdiet ante nisi in ante. Integer consectetur in nisi mattis tincidunt. Donec lacinia faucibus nunc.
                         </Balancer>
-                        <Button className="uppercase bg-primaryBlue px-14 py-6 hover:bg-white hover:text-primaryBlue duration-500">More Details</Button>
+                        <div className="flex flex-col gap-5 md:items-center md:flex-row">
+                            <Avatar className="size-20">
+                                <AvatarImage src="https://github.com/shadcn.png" />
+                                <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
+                            <div className="flex flex-col">
+                                <h4 className="text-lg font-bold">Marcos Romean Diangle</h4>
+                                <p className="text-base text-gray-600 font-normal">CEO & Founder</p>
+                            </div>
+                        </div>
                     </div>
                     <div className="w-full md:w-[60%]">
                         <div className="w-full h-full relative">
