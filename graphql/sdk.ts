@@ -72,6 +72,83 @@ export const GetHeaderPageDocument = gql`
 }
     `;
 export type GetHeaderPageQueryResult = Apollo.QueryResult<GetHeaderPageQuery, GetHeaderPageQueryVariables>;
+export const TemplateAboutDocument = gql`
+    query TemplateAbout($uri: String!) {
+  pageBy(uri: $uri) {
+    title
+    content
+    globalHero {
+      globalHeroBackgroundImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+    }
+    aboutSection {
+      aboutType
+      aboutSection {
+        aboutImage {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        aboutSubTitle
+        aboutTitle
+        aboutDescription
+        aboutBigHeading
+        aboutAuthor {
+          logo {
+            node {
+              id
+              title
+              altText
+              sourceUrl
+            }
+          }
+          name
+          position
+        }
+      }
+    }
+    whyChooseUsSection {
+      whyChooseUsImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+      whyChooseUsSubTitle
+      whyChooseUsTitle
+      whyChooseUsDescription
+      whyChooseUsAccordion {
+        title
+        content
+      }
+    }
+    logosBrands {
+      brands {
+        image {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export type TemplateAboutQueryResult = Apollo.QueryResult<TemplateAboutQuery, TemplateAboutQueryVariables>;
 export const TemplateArticlesPostDocument = gql`
     query TemplateArticlesPost($first: Int!, $after: String) {
   articles(first: $first, after: $after) {
@@ -215,6 +292,7 @@ export const TemplateHomeDocument = gql`
       }
     }
     aboutSection {
+      aboutType
       aboutSection {
         aboutImage {
           node {
@@ -224,9 +302,22 @@ export const TemplateHomeDocument = gql`
             sourceUrl
           }
         }
+        aboutSubTitle
         aboutTitle
         aboutDescription
         aboutBigHeading
+        aboutAuthor {
+          logo {
+            node {
+              id
+              title
+              altText
+              sourceUrl
+            }
+          }
+          name
+          position
+        }
       }
     }
     ourServicesSection {

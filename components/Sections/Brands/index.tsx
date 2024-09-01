@@ -1,11 +1,12 @@
 import React from 'react'
 import BrandSlider from '@/molecules/BrandSlider'
 import { Section } from '@/components/craft'
+import { LogosBrands } from '@/types/graphql'
 
-const Brands = () => {
+const Brands = ({ brands }: LogosBrands) => {
     return (
         <Section className="bg-[#eff2f7] py-20 md:py-20">
-            <BrandSlider />
+            <BrandSlider brands={brands} />
         </Section>
     )
 }

@@ -9,6 +9,7 @@ import Balancer from 'react-wrap-balancer'
 import colorizeText from '@/utils/colorizeText'
 import ServiceCard from '@/components/Cards/ServiceCard'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { get } from 'lodash'
 
 type AboutProps = {
     heroSection?: HeroSection
@@ -16,13 +17,13 @@ type AboutProps = {
 }
 
 const AboutMainSection = ({ heroSection, aboutSection }: AboutProps) => {
-    const aboutType = "ReverseWithIcon"
+    const aboutType = aboutSection?.aboutType
 
-    switch (aboutType as any) {
+    switch (aboutType![0] as string) {
         case 'Standard':
             return <AboutStandard heroSection={heroSection} aboutSection={aboutSection} />
         case 'ReverseWithIcon':
-            return <AboutReverseWithIcon />
+            return <AboutReverseWithIcon aboutSection={aboutSection} />
         default:
             return null;
     }
@@ -66,9 +67,18 @@ const AboutStandard = ({ heroSection, aboutSection }: AboutProps) => {
     )
 }
 
-const AboutReverseWithIcon = () => {
+const AboutReverseWithIcon = ({ aboutSection }: AboutProps) => {
 
-    const colorText = colorizeText("Most Trusted IT Solutio & Business {% Agency %}", 'text-primaryBlue');
+    const sideAboutImageUrl = get(aboutSection, 'aboutSection.aboutImage.node.sourceUrl');
+    const sideAboutImageTitle = get(aboutSection, 'aboutSection.aboutImage.node.title');
+    const aboutSubTitle = get(aboutSection, 'aboutSection.aboutSubTitle');
+    const aboutTitle = get(aboutSection, 'aboutSection.aboutTitle');
+    const aboutDescription = get(aboutSection, 'aboutSection.aboutDescription');
+    const authorSourceUrl = get(aboutSection, 'aboutSection.aboutAuthor.logo.node.sourceUrl');
+    const authorName = get(aboutSection, 'aboutSection.aboutAuthor.name');
+    const authorPosition = get(aboutSection, 'aboutSection.aboutAuthor.position');
+
+    const colorText = colorizeText(aboutTitle as string, 'text-primaryBlue');
 
     return (
         <Section className="bg-white-egg">
@@ -76,28 +86,29 @@ const AboutReverseWithIcon = () => {
                 <div className="flex flex-col gap-y-7 md:flex-row md:gap-y-0">
                     <div className="w-full md:w-[40%] space-y-6">
                         {/* <div className="flex flex-col justify-center gap-7 md:flex-row md:items-center"> */}
-                        <span className={cn("font-bold text-base uppercase text-primaryBlue tracking-[0.5em]")}>About Techno</span>
+                        <span className={cn("font-bold text-base uppercase text-primaryBlue tracking-[0.5em]")}>{aboutSubTitle}</span>
                         <h2 className={cn("my-0 text-3xl font-bold md:my-0 md:text-4xl")}>{colorText}</h2>
                         {/* </div> */}
                         <Balancer className="text-lg font-light">
-                            Pellentesque at posuere tellus. Ut sed dui justo. Phasellus is scelerisque turpis arcu, ut pulvinar lectus tristique non. Nam laoreet, risus vel laoreet laoreet, mauris risus porta velit, id imperdiet ante nisi in ante. Integer consectetur in nisi mattis tincidunt. Donec lacinia faucibus nunc.
+                            {aboutDescription}
                         </Balancer>
+
                         <div className="flex flex-col gap-5 md:items-center md:flex-row">
                             <Avatar className="size-20">
-                                <AvatarImage src="https://github.com/shadcn.png" />
+                                <AvatarImage src={authorSourceUrl as string} />
                                 <AvatarFallback>CN</AvatarFallback>
                             </Avatar>
                             <div className="flex flex-col">
-                                <h4 className="text-lg font-bold">Marcos Romean Diangle</h4>
-                                <p className="text-base text-gray-600 font-normal">CEO & Founder</p>
+                                <h4 className="text-lg font-bold">{authorName}</h4>
+                                <p className="text-base text-gray-600 font-normal">{authorPosition}</p>
                             </div>
                         </div>
                     </div>
                     <div className="w-full md:w-[60%]">
                         <div className="w-full h-full relative">
                             <Image
-                                src={`https://wp.ditsolution.net/techno-new/wp-content/uploads/2020/12/about-new.png`}
-                                alt={'asdjkhasj'}
+                                src={sideAboutImageUrl as string}
+                                alt={sideAboutImageTitle as string}
                                 className="!relative md:!absolute"
                                 fill
                                 sizes='100vw'

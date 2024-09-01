@@ -1,0 +1,75 @@
+
+query TemplateAbout($uri: String!) {
+  pageBy(uri: $uri) {
+    title
+    content
+    globalHero {
+      globalHeroBackgroundImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+    }
+    aboutSection {
+      aboutType
+      aboutSection {
+        aboutImage {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+        aboutSubTitle
+        aboutTitle
+        aboutDescription
+        aboutBigHeading
+        aboutAuthor {
+          logo {
+            node {
+              id
+              title
+              altText
+              sourceUrl
+            }
+          }
+          name
+          position
+        }
+      }
+    }
+    whyChooseUsSection {
+      whyChooseUsImage {
+        node {
+          id
+          title
+          altText
+          sourceUrl
+        }
+      }
+      whyChooseUsSubTitle
+      whyChooseUsTitle
+      whyChooseUsDescription
+      whyChooseUsAccordion {
+        title
+        content
+      }
+    }
+    logosBrands {
+      brands {
+        image {
+          node {
+            id
+            title
+            altText
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}

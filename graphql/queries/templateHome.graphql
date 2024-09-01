@@ -28,6 +28,7 @@ query TemplateHome($uri: String!) {
       }
     }
     aboutSection {
+      aboutType
       aboutSection {
         aboutImage {
           node {
@@ -37,9 +38,22 @@ query TemplateHome($uri: String!) {
             sourceUrl
           }
         }
+        aboutSubTitle
         aboutTitle
         aboutDescription
         aboutBigHeading
+        aboutAuthor {
+          logo {
+            node {
+              id
+              title
+              altText
+              sourceUrl
+            }
+          }
+          name
+          position
+        }
       }
     }
     ourServicesSection {
