@@ -2,7 +2,7 @@
 export const mainMenu = {
   home: "/",
   about: "/about",
-  shop: "/shop",
+  // shop: "/shop",
 };
 
 export const contentMenu = {

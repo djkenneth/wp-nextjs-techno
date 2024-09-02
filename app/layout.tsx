@@ -9,7 +9,7 @@ import "./globals.css";
 
 import graphqlQuery from "@/lib/client";
 import { GetHeaderPageDocument, GetFooterPageDocument } from "@/graphql/sdk";
-import type { GetHeaderPageQuery, GetFooterPageQuery } from '@/types/graphql' 
+import type { GetHeaderPageQuery, GetFooterPageQuery } from '@/types/graphql'
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
@@ -80,7 +80,7 @@ const Nav = async ({ className, children, id }: NavProps) => {
 
   const { customHeader, loading, error } = await graphqlQuery<GetHeaderPageQuery>(GetHeaderPageDocument)
 
-  if(!customHeader) {
+  if (!customHeader) {
     notFound();
   }
 
@@ -88,7 +88,7 @@ const Nav = async ({ className, children, id }: NavProps) => {
   const logo = get(customHeader, 'header.logo.node');
   const menus = get(customHeader, 'header.menus');
   const cart = get(customHeader, 'header.cart');
-  
+
   return (
     <nav
       className={cn(
@@ -132,7 +132,7 @@ const Nav = async ({ className, children, id }: NavProps) => {
               </Button>
             ))}
           </div>
-          <Button className="hidden sm:flex bg-blue-800 size-8" size="icon">
+          {/* <Button className="hidden sm:flex bg-blue-800 size-8" size="icon">
             <Search strokeWidth={3} className="h-4 w-4" />
           </Button>
           <Link href={cart?.url!} className="relative hidden sm:flex">
@@ -140,7 +140,7 @@ const Nav = async ({ className, children, id }: NavProps) => {
               <ShoppingBasket strokeWidth={3} className="h-4 w-4" />
             </Button>
             <Badge className="absolute -top-2 -right-2 z-10 px-1">0</Badge>
-          </Link>
+          </Link> */}
           <MobileNav />
         </div>
       </div>
@@ -151,7 +151,7 @@ const Nav = async ({ className, children, id }: NavProps) => {
 const Footer = async () => {
   const { customFooter, loading, error } = await graphqlQuery<GetFooterPageQuery>(GetFooterPageDocument)
 
-  if(!customFooter) {
+  if (!customFooter) {
     notFound();
   }
 
