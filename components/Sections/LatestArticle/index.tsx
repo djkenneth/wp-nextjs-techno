@@ -16,7 +16,7 @@ const LatestArticle = async () => {
     )
 
     return (
-        <Section className="bg-[#edf4fc]">
+        <Section id="blog" className="bg-[#edf4fc]">
             <Container>
                 <div>
                     <span className="text-base text-primaryBlue uppercase tracking-[.45em]">Latest Article</span>

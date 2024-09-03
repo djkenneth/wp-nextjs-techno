@@ -17,7 +17,7 @@ const CaseStudies = async ({ caseStudiesSubTitle, caseStudiesTitle }: CaseStudie
     const { caseStudies } = await graphqlQuery<TemplateCaseStudiesPostQuery>(TemplateCaseStudiesPostDocument)
 
     return (
-        <Section>
+        <Section id="portfolio">
             <Container>
                 <div>
                     <span className="text-base text-primaryBlue uppercase tracking-[.45em]">{caseStudiesSubTitle}</span>

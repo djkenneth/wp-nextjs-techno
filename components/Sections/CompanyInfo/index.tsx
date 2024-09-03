@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 
 const CompanyInfo = ({ companyInfo }: Company) => {
   return (
-    <Section>
+    <Section id="contact">
       <Container>
         <div className="grid gap-5 grid-cols-1 md:grid-cols-3">
           {companyInfo && companyInfo.map((info) => (
